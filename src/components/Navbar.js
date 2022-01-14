@@ -78,7 +78,7 @@ class Navbar extends React.Component {
             </div>
             <div className="search">
                 <FaSearch className="search_icon"/>
-                <input type="text" placeholder="search for products" onChange={ (e) => this.setState({searchProducts:e.target.value}) }
+                <input type="text" placeholder="Search Products" onChange={ (e) => this.setState({searchProducts:e.target.value}) }
                         onKeyPress={ (e) => this.handleSearch(e) }/>
             </div>
             <div className="user">
