@@ -1,5 +1,6 @@
 import { PRODUCTS, LOW_HIGH, HIGH_LOW, NORMAL, ADD_TO_WISHLIST, SHOW_WISHLIST, SEARCH, VIEW_SIMILAR, REMOVE_FROM_WISHLIST, ADD_TO_BAG, SHOW_BAG, REMOVE_FROM_BAG, FILTER } from "../actions";
 
+//initial state
 const initialState={
     products:[],
     isProducts:true,
@@ -17,7 +18,7 @@ const initialState={
     filter:[],
 
 }
-//return based on action type
+// return based on action type
 export default function products(state=initialState, action){
     switch(action.type){
         case PRODUCTS:
@@ -141,8 +142,6 @@ export default function products(state=initialState, action){
                 isFilter:false,
             }
         case VIEW_SIMILAR:
-            // let low_price=action.price-500;
-            // let high_price=action.price+500;
             console.log(action.brand);
             state.viewSimilar=state.products.products.filter((prod) => {
                 if(prod.brand === action.brand){
@@ -280,6 +279,8 @@ export default function products(state=initialState, action){
                 isSearch:false,
                 isViewSimilar:false,
             }
+            default:
+                return state;
     }
     return state;
 }

@@ -118,11 +118,11 @@ render(){
                             renderProducts.map(prod => <Product product={prod} key={prod.id} handleViewSimilar={this.handleViewSimilar} handleRemoveFromWishlist={this.handleRemoveFromWishlist} handleRemoveFromBag={this.handleRemoveFromBag}  /> )
                         }
                     </div> : 
-                    <div className="no_products">
-                        <div className="no_products_title">
+                    <div className="add_products">
+                        <div className="add_products_title">
                             <p>Nothing is Present, Please add products!</p>
                         </div>
-                        <button className="add-btn" onClick={ () => this.handleNormalDisplay() }>Add
+                        <button className="add-btn" onClick={ () => this.handleNormalDisplay() }>ADD
                         </button>
                     </div> 
                     }

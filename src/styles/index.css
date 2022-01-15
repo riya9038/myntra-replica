@@ -204,17 +204,23 @@ section{
 ::-webkit-scrollbar {
   display: none;
 }
-.no_products{
-  width:50%;
-  height: 20%;
-  margin-left: 20%;
-  margin-top: 20%;
-  background-color: aliceblue;
+.add_products{
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
   text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .add-btn{
-  width:20%;
-  height:30%;
+  width:100px;
+  height:5%;
+  background-color: rgb(243, 26, 73);
+  border-radius: 4px;
+  color: white;
 }
 .product_container{
   width:20%;
@@ -347,8 +353,8 @@ section{
   height: 4%;
   background-color: lightgrey;
   position:absolute;
-  top:5%;
-  left:2%;
+  top:0.5%;
+  left:1%;
   border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
@@ -426,6 +432,7 @@ justify-content: center;
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+  cursor: pointer;
 }
 .null{
   width:15%;

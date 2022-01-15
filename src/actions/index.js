@@ -13,34 +13,34 @@ export const SHOW_BAG="SHOW_BAG";
 export const FILTER="FILTER";
 
 
-
+//to dispatch all the products
 export function items(products){
     return {
         type:PRODUCTS,
         products,
     }
 }
-
+//to sort the products in increasing order
 export function lowToHigh(products){
     return{
         type:LOW_HIGH,
         products,
     }
 }
-
+//to sort the products in decreasing order
 export function highToLow(products){
     return{
         type:HIGH_LOW,
         products,
     }
 }
-
+//to dispatch the home page
 export function normalDisplay(){
     return{
         type:NORMAL,
     }
 }
-
+//to add products to the wishlist
 export function addToWishlist(product, size){
     product.size=size;
     return{
@@ -48,36 +48,34 @@ export function addToWishlist(product, size){
         product,
     }
 }
-
+//to show the wishlist
 export function showWishlist(){
     return{
         type:SHOW_WISHLIST,
     }
 }
-
+//to search a product
 export function search(name){
     return{
         type:SEARCH,
         name,
     }
 }
-
+//to show similar products
 export function viewSimilar(brand){
     return{
         type:VIEW_SIMILAR,
         brand,
     }
 }
-
-
-
+//to remove the product from wishlist
 export function removeFromWishlist(id){
     return{
         type:REMOVE_FROM_WISHLIST,
         id,
     }
 }
-
+//to add the product in the bag
 export function addToBag(product, size){
     product.size=size;
     return{
@@ -85,20 +83,20 @@ export function addToBag(product, size){
         product,
     }
 }
-
+//to remove the product from the bag
 export function removeFromBag(id){
     return{
         type:REMOVE_FROM_BAG,
         id,
     }
 }
-
+//to show the products in the bag
 export function showBag(){
     return{
         type:SHOW_BAG,
     }
 }
-
+//to show the filtered products
 export function showFilter(gender, brand, price){
     return{
         type:FILTER,
