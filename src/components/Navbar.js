@@ -96,21 +96,21 @@ class Navbar extends React.Component {
                 </div>
             </div>
             <div className="bars">
-                        <FaBars onClick={ () => this.handleDisplayProfile() } />
-                        {
-                            this.state.display_profile &&
-                            <div className="show_profile">
-                                <div onClick={ () => this.handleShowWishlist() }>
-                                    <div><FaHeart /></div>
-                                    <div className="title">Wishlist</div>
-                                </div>
-                                <div onClick={ () => this.handleShowBag() }>
-                                    <div><FaShoppingBag /></div>
-                                    <div className="title">Bag</div>
-                                </div>
-                            </div>
-                        }
+                <FaBars onClick={ () => this.handleDisplayProfile() } />
+                {
+                    this.state.display_profile &&
+                    <div className="show_profile">
+                        <div onClick={ () => this.handleShowWishlist() }>
+                            <div><FaHeart /></div>
+                            <div className="title">Wishlist</div>
+                        </div>
+                        <div onClick={ () => this.handleShowBag() }>
+                            <div><FaShoppingBag /></div>
+                            <div className="title">Bag</div>
+                        </div>
                     </div>
+                }
+            </div>
         </div>
         );
     }

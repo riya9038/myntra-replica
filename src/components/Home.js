@@ -12,10 +12,12 @@ class Home extends React.Component{
     
     componentDidMount() {
 
+        //bag
         this.props.dispatch(items(products));
         let localBagProduct = JSON.parse(localStorage.getItem('bag'));
         let bagProducts= localBagProduct ? localBagProduct : [];
         localStorage.setItem('bag', JSON.stringify(bagProducts));
+
         //wishlist
         let localWishlistProduct = JSON.parse(localStorage.getItem('wishlist'));
         let wishlistProducts = localWishlistProduct ? localWishlistProduct : [];
@@ -113,19 +115,19 @@ render(){
             </div>
             <div className="main">
                 <Filter />
-            {renderProducts.length > 0 ? <div className="products_page">
-                        {
-                            renderProducts.map(prod => <Product product={prod} key={prod.id} handleViewSimilar={this.handleViewSimilar} handleRemoveFromWishlist={this.handleRemoveFromWishlist} handleRemoveFromBag={this.handleRemoveFromBag}  /> )
-                        }
-                    </div> : 
-                    <div className="add_products">
-                        <div className="add_products_title">
-                            <p>Nothing is Present, Please add products!</p>
-                        </div>
-                        <button className="add-btn" onClick={ () => this.handleNormalDisplay() }>ADD
-                        </button>
-                    </div> 
+                {renderProducts.length > 0 ? <div className="products_page">
+                    {
+                        renderProducts.map(prod => <Product product={prod} key={prod.id} handleViewSimilar={this.handleViewSimilar} handleRemoveFromWishlist={this.handleRemoveFromWishlist} handleRemoveFromBag={this.handleRemoveFromBag}  /> )
                     }
+                </div> : 
+                <div className="add_products">
+                    <div className="add_products_title">
+                        <p>Nothing is Present, Please add products!</p>
+                    </div>
+                    <button className="add-btn" onClick={ () => this.handleNormalDisplay() }>ADD
+                    </button>
+                </div> 
+                }
             </div>
         </main>
     )
