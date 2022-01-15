@@ -205,10 +205,29 @@ export default function products(state=initialState, action){
             let showFilter;
             if(action.gender){
                 showFilter=state.products.products.filter( prod => prod.for === action.gender);
+                if(action.brand.length>0){
+                    showFilter=showFilter.filter( prod => {
+                        for(let i=0; i< action.brand.length; i++ ){
+                            if(prod.brand === action.brand[i]){
+                                return prod;
+                            }
+                        }
+                    } )
+                }
+                if(action.price.length>0){
+                    showFilter=showFilter.filter( prod => {
+                        for(let i=0; i< action.price.length; i++ ){
+                            if(prod.range === action.price[i]){
+                                return prod;
+                            }
+                        }
+                    } )
+                }
             }
             if(action.price.length>0){
                 console.log("length",action.price.length);
                 console.log("price",action.price);
+                console.log("showFilter", showFilter);
                 if(action.gender || action.brand.length>0){
                     showFilter=showFilter.filter( prod => {
                         for(let i=0; i< action.price.length; i++ ){

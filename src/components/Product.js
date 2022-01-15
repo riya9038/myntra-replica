@@ -2,6 +2,7 @@ import React from 'react';
 import {useNavigate} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToWishlist } from '../actions';
+import { toast } from 'react-toastify';
 import { FaUser, FaHeart, FaShoppingBag, FaSearch, FaBars } from 'react-icons/fa';
 
 const Product = (props) => {
@@ -14,6 +15,7 @@ const Product = (props) => {
     }
 
     const handleWishlist = () => {
+        toast.success("Product added to wishlist")
         props.dispatch(addToWishlist(props.product, "38"));
     }
 

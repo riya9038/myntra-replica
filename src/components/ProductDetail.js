@@ -4,6 +4,7 @@ import {useLocation, useNavigate} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToWishlist, addToBag } from '../actions';
 import ZoomImage from './Zoom';
+import {toast} from 'react-toastify';
 
 const ProductDetail = (props) => {
 
@@ -17,9 +18,11 @@ const ProductDetail = (props) => {
         const location = useLocation();
         const { name, description, price, id, image } = location.state.product;
         let navigate = useNavigate();
+
         const handleWishlist = () => {
+            toast.success("Product added to wishlist")
             props.dispatch(addToWishlist(location.state.product, value));
-            navigate('/');
+            // navigate('/');
         }
 
         const HandleSizeSelection =(seletedSize) => {
@@ -63,21 +66,24 @@ const ProductDetail = (props) => {
 
         const prod=location.state.product;
         const handleAddToBag = () => {
-            
+            toast.success("Product added to bag")
             props.dispatch(addToBag(prod,value));
-            navigate('/');
+            // navigate('/');
         }
 
         const handleZoom = () => {
             setShowZoom(!showZoom);
+        }
+        const handleBack = () => {
+            navigate('/');
         }
 
         return (
   
            <div className="detail_container">
                 <div className="detail_box">
+                    <div className='back' onClick={()=>handleBack()}>Back</div>
                 <div className="detail_image">
-                    
                     {showZoom ? <ZoomImage picture={image} handleZoom={handleZoom} />:<img src={image} onClick={ () => handleZoom() } />}
                 </div>
                 <div className="detail_description">

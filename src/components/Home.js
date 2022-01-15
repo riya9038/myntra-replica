@@ -5,7 +5,7 @@ import Product from "./Product";
 import products from "../data.json";
 import { connect } from "react-redux";
 import { lowToHigh, highToLow, viewSimilar, removeFromWishlist, removeFromBag, normalDisplay,items } from '../actions/index';
-import { useNavigate } from "react-router-dom";
+import {toast} from 'react-toastify';
 
 class Home extends React.Component{
 
@@ -24,7 +24,6 @@ class Home extends React.Component{
     }
     
     handleSortLowToHigh = (products) => {
-        console.log("clicked",products)
         this.props.dispatch(lowToHigh(products));
     }
 
@@ -38,10 +37,12 @@ class Home extends React.Component{
     }
 
     handleRemoveFromWishlist = (id) => {
+        toast.success("Product removed from wishlist")
         this.props.dispatch(removeFromWishlist(id));
     }
 
     handleRemoveFromBag = (id) => {
+        toast.success("Product removed from the bag")
         this.props.dispatch(removeFromBag(id));
     }
 
