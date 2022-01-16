@@ -30,4 +30,4 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `Demo Link`
-`https://competent-einstein-8e62b8.netlify.app/`
+[Click here](https://competent-einstein-8e62b8.netlify.app/)
