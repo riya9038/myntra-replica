@@ -47,6 +47,14 @@ code {
   font-size: 0.8rem;
   cursor: pointer;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black;
+}
+.user a {
+  color: black;
+  text-decoration: none;
+}
+.title{
+  text-decoration: none;
 }
 .bars{
   display: none;
@@ -59,7 +67,7 @@ code {
   align-items: center;
   justify-content: space-around;
   font-weight: 600;
-  cursor: pointer;
+  
 }
 .search{
   width:40%;
@@ -67,8 +75,6 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  
-  /* background-color: blue; */
 }
 .search input{
   width:80%;
@@ -151,6 +157,7 @@ main{
  background-color: white;
  border:1px solid black;
  cursor: pointer;
+
 }
 .sort div{
   display: none;
@@ -250,6 +257,7 @@ section{
 .product_image img:hover{
   width: 90%;
   height: 90%;
+  transition: 1s;
 }
 .product_details{
   width: 100%;
@@ -347,6 +355,56 @@ section{
   align-items: center;
   justify-content: center;
   
+}
+.fade{
+  width:100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  opacity: 0.4;
+}
+.modal{
+  width:300px;
+  height: 200px;
+  border: 2px solid rgb(243, 26, 73);
+  padding:10px;
+  position: absolute;
+  top:40%;
+  left:40%;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0.5px 0.5px 10px black;
+}
+
+.modal-body{
+  display: flex;
+  align-items: center;;
+}
+.modal-header{
+  border-bottom: 1px solid grey;
+  margin: 20px;
+}
+.modalImage{
+  width:20%;
+  height: 10%;
+}
+.modalInfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  font-weight: 600;
+}
+.modal-footer{
+  display: flex;
+  justify-content: flex-end;
+}
+.btn{
+  background-color: rgb(243, 26, 73);
+  border: 2px solid rgb(129, 6, 33);
+  border-radius: 4px;
+  height: 25px;
+  color: white;
 }
 .back{
   width:5%;

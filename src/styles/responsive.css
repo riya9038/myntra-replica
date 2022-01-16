@@ -43,6 +43,7 @@
   @media screen and (max-width: 1200px){
     .list{
         font-size: 0.8rem;
+        padding-left: 0px;
     }
     .sub-heading2{
         padding-left: 0px;
@@ -72,7 +73,7 @@
         left:72%
     }
     .list{
-        width:95%
+        width:98%;
     }
     .filter{
         width:30%;
@@ -181,6 +182,9 @@
 .desc{
     font-size: 1.5rem;
 }
+.modal{
+    left:35%
+}
 }
  
 @media screen and (max-width: 825px){
@@ -231,6 +235,9 @@
         width:35%;
         margin-left: 60%;
     }
+    .modal{
+        left:30%
+    }
 }
 @media screen and (max-width: 707px){
     .product_container{
@@ -279,6 +286,9 @@
     .sidebar{
         font-size: 0.8rem;
     }
+    .modal{
+        left:25%
+    }
   }
  
   @media screen and (max-width:600px){
@@ -298,6 +308,9 @@
         height: 50%;
         margin-bottom: 10px;
     }
+    .modal{
+        left:20%
+    }
   }
   
   @media screen and (max-width: 534px){
@@ -311,6 +324,9 @@
     }
     .back{
         width:8%
+    }
+    .modal{
+        left:15%
     }
   }
   @media screen and (max-width:500px){
@@ -405,5 +421,10 @@
     }
     .back{
         width: 12%!important;
+    }
+    .modal{
+        left:10%;
+        width:280px;
+        height: 200px;
     }
   }

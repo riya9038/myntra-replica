@@ -24,7 +24,7 @@ const Product = (props) => {
     return (
         <div className="product_container">                
             <div className="product_image">
-                <img src={image} onClick={ () => isBag || isWishList ? " " : handleClick() } />
+                <img src={image} onClick={ () => handleClick() } />
                { (isProducts || isFilter || isBag || isWishList) && <div className="view_similar" onClick={ () => handleViewSimilar(brand) } ><p>view similar</p></div> }
                { !isWishList && <div className="wishlistOption" onClick={ () => handleWishlist() } ><FaHeart /></div>}
             </div>

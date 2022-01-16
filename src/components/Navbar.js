@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 // import logo from '../images/logo.png';
 import { showWishlist, search, showBag } from '../actions/index';
 
+
 class Navbar extends React.Component {
     constructor(props){
         super(props);
@@ -15,6 +16,7 @@ class Navbar extends React.Component {
             searchProducts:"",
         }
     }
+    
     handleDisplaySelection = () => {
         this.setState({
             display_selection:!this.state.display_selection,
@@ -31,6 +33,7 @@ class Navbar extends React.Component {
     }
 
     handleShowWishlist = () => {
+        
         this.props.dispatch(showWishlist());
         this.setState({
             display_profile:false,
@@ -86,14 +89,14 @@ class Navbar extends React.Component {
                     <div><FaUser /></div>
                     <div className="title">Profile</div>
                 </div>
-                <div className="wishlist-icon" onClick={ () => this.handleShowWishlist() }>
+                <Link to='/'><div className="wishlist-icon" onClick={ () => this.handleShowWishlist() }>
                     <div><FaHeart /></div>
                     <div className="title" >Wishlist</div>
-                </div>
-                <div className="bag-icon" onClick={ () => this.handleShowBag() }>
+                </div></Link>
+                <Link to='/'><div className="bag-icon" onClick={ () => this.handleShowBag() }>
                     <div><FaShoppingBag /></div>
                     <div className="title">Bag</div>
-                </div>
+                </div></Link>
             </div>
             <div className="bars">
                 <FaBars onClick={ () => this.handleDisplayProfile() } />

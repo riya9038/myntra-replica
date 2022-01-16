@@ -15,6 +15,7 @@ const ProductDetail = (props) => {
         const [ size44, setSize44 ] = useState(false);
         const [ size46, setSize46 ] = useState(false);
         const [ showZoom, setShowZoom ] = useState(false);
+        const [ showModal, setShowModal ] = useState(false);
         const location = useLocation();
         const { name, description, price, id, image } = location.state.product;
         let navigate = useNavigate();
@@ -68,6 +69,7 @@ const ProductDetail = (props) => {
         const handleAddToBag = () => {
             toast.success("Product added to bag")
             props.dispatch(addToBag(prod,value));
+            setShowModal(true);
             // navigate('/');
         }
 
@@ -77,10 +79,13 @@ const ProductDetail = (props) => {
         const handleBack = () => {
             navigate('/');
         }
+        const handleModal= () => {
+            setShowModal(!showModal);
+        }
 
         return (
-  
-           <div className="detail_container">
+            <>
+           <div className={`${showModal ? "fade" : "detail_container"}`}>
                 <div className="detail_box">
                     <div className='back' onClick={()=>handleBack()}>Back</div>
                     <div className="detail_image">
@@ -109,8 +114,33 @@ const ProductDetail = (props) => {
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div> 
+            {showModal && 
+                    <div id="myModal" className="modal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div className="modal-header">
+                                {/* <button type="button" class="close" data-dismiss="modal">&times;</button> */}
+                                <h4 class="modal-title">ADDED TO BAG</h4>
+                            </div>
+                            <div className="modal-body">
+                                <img src={image} alt="image" className='modalImage'></img>
+                                <div className='modalInfo'>
+                                    <span>{name}</span>
+                                    <span>{description}</span>
+                                    <span>Rs.{price}</span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" className="btn btn-default" data-dismiss="modal" onClick={()=>handleModal()}>Close</button>
+                            </div>
+                            </div>
+
+                        </div>
+                    </div>}
+                    </>
         )
 }
 
